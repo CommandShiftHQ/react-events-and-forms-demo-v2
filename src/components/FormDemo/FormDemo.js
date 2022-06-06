@@ -46,7 +46,7 @@ const FormDemo = () => {
       <div className="form__field">
         <label>
           What breed is your cat?
-          <select>
+          <select name="breed" onChange={(event) => handleOnChange(event)}>
             {breeds.cat.map((breed) => (
               <option key={toKebabCase(breed)} value={toKebabCase(breed)}>
                 {breed}
