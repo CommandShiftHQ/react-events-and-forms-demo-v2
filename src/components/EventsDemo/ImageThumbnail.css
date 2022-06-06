@@ -1,0 +1,29 @@
+.image-thumbnail {
+  margin: 2px;
+  position: relative;
+}
+
+.image-thumbnail__image {
+  display: block;
+  height: 100%;
+}
+
+.image-thumbnail__selected-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(45deg, rgb(68, 171, 235), rgb(68, 235, 207));
+  color: white;
+  padding: 10px 12px;
+  font-weight: 700;
+  border-radius: 20px;
+  line-height: 1;
+}
+
+.image-thumbnail__title {
+  background-color: rgb(198, 232, 253);
+  padding: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}

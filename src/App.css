@@ -13,10 +13,17 @@ body {
 
 nav {
   display: flex;
-  gap: 10px;
+  gap: 2rem;
   margin-bottom: 2em;
 }
 
+a {
+  font-weight: 700;
+  color: rgb(114, 141, 158);
+  text-decoration: none;
+}
+
 .active {
-  color: red;
+  color: rgb(0, 151, 245);
+  text-decoration: underline;
 }
