@@ -12,6 +12,13 @@ const FormDemo = () => {
     });
   };
 
+  const handleCheckboxChange = (event) => {
+    setFields({
+      ...fields,
+      [event.target.name]: event.target.checked,
+    });
+  };
+
   const toKebabCase = (string) => {
     return string.toLowerCase().replace(' ', '-');
   };
@@ -57,7 +64,11 @@ const FormDemo = () => {
       </div>
       <div className="form__field">
         <label>
-          <input type="checkbox" />
+          <input
+            name="vaccination"
+            type="checkbox"
+            onChange={(event) => handleCheckboxChange(event)}
+          />
           Is your cat vacinated?
         </label>
       </div>
