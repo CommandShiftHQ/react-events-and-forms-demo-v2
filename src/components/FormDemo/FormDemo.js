@@ -3,11 +3,14 @@ import { breeds } from '../../data/cat-breeds.js';
 import './FormDemo.css';
 
 const FormDemo = () => {
-  const [field, setField] = useState({ name: '' });
+  const [fields, setFields] = useState({});
 
   const handleOnChange = (event) => {
-    console.log(event.target.value);
-    setField(event.target.value);
+    console.log(fields);
+    setFields({
+      ...fields,
+      [event.target.name]: event.target.value,
+    });
   };
 
   const toKebabCase = (string) => {
@@ -19,7 +22,11 @@ const FormDemo = () => {
       <div className="form__field">
         <label>
           What is your cat name?
-          <input type="text" onChange={(event) => handleOnChange(event)} />
+          <input
+            name="name"
+            type="text"
+            onChange={(event) => handleOnChange(event)}
+          />
         </label>
       </div>
       <div className="form__field">
@@ -49,7 +56,11 @@ const FormDemo = () => {
       <div className="form__field">
         <label>
           What is your cat favourite activity?
-          <textarea />
+          <textarea
+            name="activity"
+            type="text"
+            onChange={(event) => handleOnChange(event)}
+          />
         </label>
       </div>
     </div>
