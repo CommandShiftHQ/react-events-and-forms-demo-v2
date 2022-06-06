@@ -6,7 +6,12 @@ const ImageThumbnail = ({ url, description }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="image-thumbnail">
+    <div
+      className="image-thumbnail"
+      onMouseOver={() => setIsHovered(true)}
+      onMouseOut={() => setIsHovered(false)}
+      onClick={() => setIsSelected(!isSelected)}
+    >
       <img src={url} className="image-thumbnail__image" alt={description} />
       {isSelected && (
         <div className="image-thumbnail__selected-tag">Selected</div>
