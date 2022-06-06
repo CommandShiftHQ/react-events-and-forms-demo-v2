@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { breeds } from '../../data/cat-breeds.js';
 import './FormDemo.css';
 
@@ -6,7 +6,6 @@ const FormDemo = () => {
   const [fields, setFields] = useState({});
 
   const handleOnChange = (event) => {
-    console.log(fields);
     setFields({
       ...fields,
       [event.target.name]: event.target.value,
@@ -16,6 +15,10 @@ const FormDemo = () => {
   const toKebabCase = (string) => {
     return string.toLowerCase().replace(' ', '-');
   };
+
+  useEffect(() => {
+    console.log(fields);
+  });
 
   return (
     <div className="FormDemo">
@@ -32,7 +35,12 @@ const FormDemo = () => {
       <div className="form__field">
         <label>
           How old is your cat?
-          <input type="number" max={20} />
+          <input
+            name="age"
+            type="number"
+            max={20}
+            onChange={(event) => handleOnChange(event)}
+          />
         </label>
       </div>
       <div className="form__field">
