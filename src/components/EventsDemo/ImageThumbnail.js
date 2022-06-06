@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ImageThumbnail.css';
 
 const ImageThumbnail = ({ url, description }) => {
+  const [isSelected, setIsSelected] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="image-thumbnail">
       <img src={url} className="image-thumbnail__image" alt={description} />
-      <div className="image-thumbnail__selected-tag">Selected</div>
-      <div className="image-thumbnail__title">{description}</div>
+      {isSelected && (
+        <div className="image-thumbnail__selected-tag">Selected</div>
+      )}
+      {isHovered && <div className="image-thumbnail__title">{description}</div>}
     </div>
   );
 };
