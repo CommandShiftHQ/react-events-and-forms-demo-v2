@@ -1,7 +1,15 @@
+import { useState } from 'react';
 import { breeds } from '../../data/cat-breeds.js';
 import './FormDemo.css';
 
 const FormDemo = () => {
+  const [field, setField] = useState({ name: '' });
+
+  const handleOnChange = (event) => {
+    console.log(event.target.value);
+    setField(event.target.value);
+  };
+
   const toKebabCase = (string) => {
     return string.toLowerCase().replace(' ', '-');
   };
@@ -11,7 +19,7 @@ const FormDemo = () => {
       <div className="form__field">
         <label>
           What is your cat name?
-          <input type="text" />
+          <input type="text" onChange={(event) => handleOnChange(event)} />
         </label>
       </div>
       <div className="form__field">
